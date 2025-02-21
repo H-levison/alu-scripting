@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+
+"""
+This module contains functions to interact with the Reddit API.
+
+Functions:
+- number_of_subscribers(subreddit): Returns the number of subscribers of a given subreddit.
+- top_ten(subreddit): Prints the titles of the first 10 hot posts from a given subreddit.
+"""
+
 import requests
 
 def number_of_subscribers(subreddit):
