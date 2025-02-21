@@ -8,7 +8,9 @@ Functions:
 - top_ten(subreddit): Prints the titles of the first 10 hot posts from a given subreddit.
 """
 
+
 import requests
+
 
 def number_of_subscribers(subreddit):
     """
