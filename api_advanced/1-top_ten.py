@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-
 """
-This module contains functions to interact with the Reddit API.
+This module interacts with the Reddit API to fetch subreddit statistics and post details.
 
 Functions:
 - number_of_subscribers(subreddit): Returns the number of subscribers of a given subreddit.
 - top_ten(subreddit): Prints the titles of the first 10 hot posts from a given subreddit.
 """
 
-
 import requests
-
 
 def number_of_subscribers(subreddit):
     """
@@ -20,7 +17,7 @@ def number_of_subscribers(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agent": "custom-script:v1.0 (by /u/yourusername)"}  # Use a custom User-Agent
     response = requests.get(url, headers=headers, allow_redirects=False)
-
+    
     if response.status_code == 200:
         data = response.json()
         return data.get("data", {}).get("subscribers", 0)
@@ -35,7 +32,7 @@ def top_ten(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
     headers = {"User-Agent": "custom-script:v1.0 (by /u/yourusername)"}  # Use a custom User-Agent
     response = requests.get(url, headers=headers, allow_redirects=False)
-
+    
     if response.status_code == 200:
         data = response.json()
         posts = data.get("data", {}).get("children", [])
