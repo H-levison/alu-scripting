@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""script that queries subscribers on a subreddit"""
+
 import requests
 
 def number_of_subscribers(subreddit):
@@ -21,4 +23,3 @@ def number_of_subscribers(subreddit):
 if __name__ == "__main__":
     subreddit = "python"  # Change this to any subreddit you want to test
     print(f"Number of subscribers: {number_of_subscribers(subreddit)}")
-
