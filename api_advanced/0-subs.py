@@ -1,8 +1,5 @@
 #!/usr/bin/python3 
-"""
-This script contains a function that queries the Reddit API to retrieve the number of subscribers for a given subreddit.
-It ensures handling of invalid subreddits by returning 0 in such cases and avoids following redirects.
-"""
+""" This script contains a function that queries the Reddit API to retrieve the number of subscribers for a given subreddit. It ensures handling of invalid subreddits by returning 0 in such cases and avoids following redirects."""
 
 import requests
 
