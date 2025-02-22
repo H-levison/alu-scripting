@@ -1,6 +1,8 @@
-#!/usr/bin/python3 
-"""This script contains a function that queries the Reddit API to retrieve the number of subscribers for a given subreddit."""
+#!/usr/bin/python3
+"""This script contains will retrieve the number of subscribers for a given subreddit"""
+
 import requests
+
 
 def number_of_subscribers(subreddit):
     """
@@ -8,10 +10,8 @@ def number_of_subscribers(subreddit):
     If the subreddit is invalid, returns 0.
     """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {"User-Agent": "custom-script/1.0"}  # Setting a custom User-Agent to avoid Too Many Requests error
-
+    headers = {"User-Agent": "custom-script/1.0"}
     response = requests.get(url, headers=headers, allow_redirects=False)
-
     if response.status_code != 200:
         return 0
 
@@ -19,4 +19,4 @@ def number_of_subscribers(subreddit):
         data = response.json()
         return data.get("data", {}).get("subscribers", 0)
     except ValueError:
-        return 0
+        return 0
